@@ -1,0 +1,23 @@
+(()=>{var t={30827:(t,e,o)=>{"use strict";o.d(e,{y:()=>a});var i=o(38085),r=o(93811);class a extends r.LitElement{constructor(){super(...arguments),this.components=[],this.subscriptions=[]}connectedCallback(){super.connectedCallback(),(0,i.lazyDefine)(this.components)}disconnectedCallback(){super.disconnectedCallback(),this.unsubscribe()}unsubscribe(){this.subscriptions.forEach(t=>{t.unsubscribe()})}static define(t,e,o){(0,i.defineWebHighlightsElement)(t,e,o)}}},36758:t=>{"use strict";t.exports=function(t){return t[1]}},38085:t=>{"use strict";t.exports=WebHighlightsSharedLibExternal},40935:t=>{"use strict";t.exports=function(t){var e=[];return e.toString=function(){return this.map(function(e){var o="",i=void 0!==e[5];return e[4]&&(o+="@supports (".concat(e[4],") {")),e[2]&&(o+="@media ".concat(e[2]," {")),i&&(o+="@layer".concat(e[5].length>0?" ".concat(e[5]):""," {")),o+=t(e),i&&(o+="}"),e[2]&&(o+="}"),e[4]&&(o+="}"),o}).join("")},e.i=function(t,o,i,r,a){"string"==typeof t&&(t=[[null,t,void 0]]);var s={};if(i)for(var n=0;n<this.length;n++){var c=this[n][0];null!=c&&(s[c]=!0)}for(var l=0;l<t.length;l++){var g=[].concat(t[l]);i&&s[g[0]]||(void 0!==a&&(void 0===g[5]||(g[1]="@layer".concat(g[5].length>0?" ".concat(g[5]):""," {").concat(g[1],"}")),g[5]=a),o&&(g[2]?(g[1]="@media ".concat(g[2]," {").concat(g[1],"}"),g[2]=o):g[2]=o),r&&(g[4]?(g[1]="@supports (".concat(g[4],") {").concat(g[1],"}"),g[4]=r):g[4]="".concat(r)),e.push(g))}},e}},46993:(t,e,o)=>{"use strict";o.r(e),o.d(e,{default:()=>n});var i=o(36758),r=o.n(i),a=o(40935),s=o.n(a)()(r());s.push([t.id,":host{display:block;width:100%;height:100%;overflow:hidden;background-color:white;background-color:var(--wh-fallback-img-color, white);position:relative}.image{height:100%;width:100%;-o-object-fit:cover;object-fit:cover;--wh-fallback-img-color: var(--wh-bg-front);transition:opacity .2s ease-in-out}.image.loading{opacity:0}.image-loading{position:absolute;top:0;left:0;width:100%;height:100%}",""]);const n=s},79868:(t,e,o)=>{var i=o(46993);i&&i.__esModule&&(i=i.default),t.exports="string"==typeof i?i:i.toString()},93811:t=>{"use strict";t.exports=LitExternal},95665:t=>{"use strict";t.exports=LitDecoratorsExternal}},e={};function o(i){var r=e[i];if(void 0!==r)return r.exports;var a=e[i]={id:i,exports:{}};return t[i](a,a.exports,o),a.exports}o.n=t=>{var e=t&&t.__esModule?()=>t.default:()=>t;return o.d(e,{a:e}),e},o.d=(t,e)=>{for(var i in e)o.o(e,i)&&!o.o(t,i)&&Object.defineProperty(t,i,{enumerable:!0,get:e[i]})},o.o=(t,e)=>Object.prototype.hasOwnProperty.call(t,e),o.r=t=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},(()=>{"use strict";var t=o(93811),e=o(95665),i=o(38085),r=o(30827),a=o(79868),s=o.n(a),n=function(t,e,o,i){var r,a=arguments.length,s=a<3?e:null===i?i=Object.getOwnPropertyDescriptor(e,o):i;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)s=Reflect.decorate(t,e,o,i);else for(var n=t.length-1;n>=0;n--)(r=t[n])&&(s=(a<3?r(s):a>3?r(e,o,s):r(e,o))||s);return a>3&&s&&Object.defineProperty(e,o,s),s};const c=i.SHARED_COMPONENTS.ImageWithFallback,l=c.TAG;class g extends r.y{constructor(){super(...arguments),this.components=[i.SHARED_COMPONENTS.FallbackImage.TAG,i.SHARED_COMPONENTS.Skeleton.TAG],this.isImageLoadingError=!1,this.isImageLoading=!0}onImageLoadError(t){this.isImageLoadingError=!0,this.isImageLoading=!1}onImageLoaded(){this.isImageLoading=!1}render(){var e;return!this.props.src||this.isImageLoadingError?t.html`<webhighlights-fallback-img
+        class="image"
+        part="image"
+        .size=${null!==(e=this.props.fallbackImageSize)&&void 0!==e?e:32}
+      >
+      </webhighlights-fallback-img>`:t.html`<img
+        class="image ${this.isImageLoading?"loading":""}"
+        part="image"
+        src=${this.props.src}
+        data-testid=${c.TEST_IDS.IMAGE}
+        alt=${this.props.alt}
+        loading="lazy"
+        @load=${this.onImageLoaded}
+        @error=${this.onImageLoadError}
+      />
+      ${this.isImageLoading?t.html`
+            <webhighlights-skeleton
+              class="image-loading"
+              part="image-loading"
+            ></webhighlights-skeleton>
+          `:t.html``} `}}g.styles=t.css`
+    ${(0,t.unsafeCSS)(s())}
+  `,n([(0,e.property)()],g.prototype,"props",void 0),n([(0,e.state)()],g.prototype,"isImageLoadingError",void 0),n([(0,e.state)()],g.prototype,"isImageLoading",void 0),r.y.define(l,g)})()})();
